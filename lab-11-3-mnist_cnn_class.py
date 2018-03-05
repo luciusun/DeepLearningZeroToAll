@@ -151,3 +151,10 @@ print('Learning Finished!')
 
 # Test model and check accuracy
 print('Accuracy:', m1.get_accuracy(mnist.test.images, mnist.test.labels))
+
+# Get one and predict
+r = random.randint(0, mnist.test.num_examples - 1)
+print("Label: ", sess.run(tf.argmax(mnist.test.labels[r:r + 1], 1)))
+print（"Prediction: ",m1.predict(mnist.test.images[r:r + 1])）
+
+
